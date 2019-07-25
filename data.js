@@ -1,17 +1,17 @@
 // You may modify this for testing purposes.
 const data = [
 	{
-		"id": 272822514,
-		"firstName": "Billy",
-		"lastName": "Bob",
-		"gender": "male",
-		"dob": "1/18/1949",
-		"height": 71,
-		"weight": 175,
-		"eyeColor": "brown",
-		"occupation": "programmer",
-		"parents": [],
-		"currentSpouse": 401222887
+		"id": 272822514,			//0
+		"firstName": "Billy",		//1
+		"lastName": "Bob",			//2
+		"gender": "male",			//3
+		"dob": "1/18/1949",			//4
+		"height": 71,				//5
+		"weight": 175,				//6
+		"eyeColor": "brown",		//7
+		"occupation": "programmer",	//8
+		"parents": [],				//9
+		"currentSpouse": 401222887	//10
 	},
 	{
 		"id": 401222887,
