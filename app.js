@@ -12,7 +12,7 @@ function app(people){
       mainMenu(foundPerson, people);
       break;
     case 'no':
-
+    // TODO: search by traits
 
       break;
       default:
@@ -35,8 +35,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-
-    displayPeople(people[0]);
+    displayPeople(people);
 
     break;
     case "family":
@@ -73,12 +72,9 @@ function searchByName(people){
 
 // alerts a list of people
 function displayPeople(people){
-
-
-  alert(people.map(function(person){
-
-    return person.firstName + " " + person.lastName;
-  }).join("\n"));
+	alert(people.map(function(person){
+	return person.firstName + " " + person.lastName;
+ 	 }).join("\n"));
 }
 
 function displayPerson(person){
@@ -92,8 +88,6 @@ function displayPerson(person){
 "eyeColor" + "occupation"}));
 return personInfo;
 console.log(personInfo);
-
-
 
 }
 // function that prompts and validates user input
