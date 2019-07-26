@@ -95,28 +95,29 @@ function displayPeople(people){
 
 function searchByGender(people){
     var input = prompt("Is the person male or female?");
-    let searchByGender;
+    var searchGender;
+
     switch(input.toLowerCase()){
       case "male":
-      searchByGender = "male";
-      break;
+        searchGender = "male";
+        break;
       case "female":
-      searchByGender = "female";
-      // console.log(peopleOfGenderResultsArray);
-      break;
+        searchGender = "female";
+        // console.log(peopleOfGenderResultsArray);
+        break;
       default:
-      alert("Please try again.");
-      return searchByGender(people);
-      break;
+        alert("Please try again.");
+        return searchByGender(people);
+        break;
 
-      alert(peopleOfGenderResultsArray);
     }
-    let peopleOfGenderResultsArray = people.filter(function(el){
-      el.gender === searchByGender
-      alert(peopleOfGenderResultsArray);
+    let results = people.filter(function(el){
+      return el.gender === searchGender
     });
-    console.log(peopleOfGenderResultsArray);
-    return peopleOfGenderResultsArray;
+     console.log(results);
+
+     return results;
+
 }
 
 
