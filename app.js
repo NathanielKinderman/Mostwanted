@@ -12,7 +12,7 @@ function app(people){
     mainMenu(foundPerson, people);
     break;
     case 'no':
-    	var found// TODO: search by traits
+    	searchByTrait(people);
 
       break;
       default:
@@ -35,7 +35,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    displayPeople(people);
+    displayPerson(person);
 
     
     break;
@@ -81,38 +81,37 @@ function searchByName(people){
   }
 
 
-  // TODO: find the person using the name they entered
 }
 
 
-function searchByTrait(people){
-	var traitFilter = promptFor("What traits does this person have?" , chars);
 
-	var foundTraits = people.filter(function(people){
-		if(person.gender.height.weight.eyeColor === gender height weight eyeColor && person.gender.height.weight.eyeColor){
-			return; true;
-		}
-		else{
-			return false; 
-		}
-	})
-	return foundTraits;
-}
 
-// alerts a list of people
+//alerts a list of people
 function displayPeople(people){
 	alert(people.map(function(person){
 	return person.firstName + " " + person.lastName;
  	 }).join("\n"));
 }
 
+function searchByGender(people){
+    var searchByGender = prompt("Is the person male or female?") 
+    let  result  =  people.filter(function(el){
+    switch (searchByGender){
+      case "male" = displayPeople();
+      alert(people.map(function(person))
+      return person.firstName + " " + person.lastName;
+       }.join("\n");
+
+    }
+    
+}
+
+
 function displayPerson(person){
   var personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
 
-  // TODO: finish getting the rest of the information to display
-
-  alert(
+    alert(
     "id: " + person.id + "\n" 
     + "first name: " + person.firstName + "\n"
     + "lastName: " + person.lastName + "\n" 
