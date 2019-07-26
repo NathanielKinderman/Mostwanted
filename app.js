@@ -12,7 +12,7 @@ function app(people){
       mainMenu(foundPerson, people);
       break;
     case 'no':
-    // TODO: search by traits
+    	var found// TODO: search by traits
 
       break;
       default:
@@ -68,6 +68,21 @@ function searchByName(people){
   })
   // TODO: find the person using the name they entered
   return foundPerson;
+}
+
+
+function searchByTrait(people){
+	var traitFilter = promptFor("What traits does this person have?" , chars);
+
+	var foundTraits = people.filter(function(people){
+		if(person.gender.height.weight.eyeColor === gender height weight eyeColor && person.gender.height.weight.eyeColor){
+			return; true;
+		}
+		else{
+			return false; 
+		}
+	})
+	return foundTraits;
 }
 
 // alerts a list of people

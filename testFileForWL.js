@@ -1,10 +1,18 @@
 "use strict";
 
-0.map(function searchByName(el){
-	"id" + "firstsName" + "lastName" + "gender" + "dob" + "height" + "weight" + 
-	 "eyeColor" + "occupation"});
+function searchByTrait(people){
+	var traitFilter = promptFor("What traits does this person have?" , chars);
 
-
+	var foundTraits = people.filter(function(people){
+		if(person.gender.height.weight.eyeColor === gender height weight eyeColor && person.gender.height.weight.eyeColor){
+			return; true;
+		}
+		else{
+			return false; 
+		}
+	})
+	return foundTraits;
+}
 
 
 
