@@ -12,10 +12,7 @@ function app(people){
     mainMenu(foundPerson, people);
     break;
     case 'no':
-
-      // TODO: search by traits // create function here to use search using the switch/case
-
-      // TODO: search by traits
+    // TODO: search by traits
 
       break;
       default:
@@ -38,10 +35,9 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
+    displayPeople(people);
 
-    displayPerson(person);
-
-    // TODO: get person's info
+    
     break;
     case "family":
     // TODO: get person's family
@@ -90,17 +86,15 @@ function searchByName(people){
 
 // alerts a list of people
 function displayPeople(people){
-
-  alert(people.map(function(person){
-    return person.firstName + " " + person.lastName;
-  }).join("\n"));
+	alert(people.map(function(person){
+	return person.firstName + " " + person.lastName;
+ 	 }).join("\n"));
 }
 
 function displayPerson(person){
-  // print all of the information about a person:
-  // height, weight, age, name, occupation, eye color.
   var personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
+
   // TODO: finish getting the rest of the information to display
 
   alert(
@@ -119,9 +113,7 @@ function displayPerson(person){
 
   return personInfo;
 
-
 }
-
 // function that prompts and validates user input
 function promptFor(question, valid){
   do{
