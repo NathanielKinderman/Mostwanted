@@ -8,9 +8,9 @@ function app(people){
   var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
   switch(searchType){
     case 'yes':
-      var foundPerson = searchByName(people);
-      mainMenu(foundPerson, people);
-      break;
+    let foundPerson = searchByName(people);
+    mainMenu(foundPerson, people);
+    break;
     case 'no':
 
       // TODO: search by traits // create function here to use search using the switch/case
@@ -20,7 +20,7 @@ function app(people){
       break;
       default:
     app(people); // restart app
-      break;
+    break;
   }
 }
 
@@ -39,7 +39,7 @@ function mainMenu(person, people){
   switch(displayOption){
     case "info":
 
-      displayPerson(people[0])
+    displayPerson(person);
 
     // TODO: get person's info
     break;
@@ -59,11 +59,14 @@ function mainMenu(person, people){
   }
 }
 
+
+//.toLowercase()......find placement in prompt so user can type name without need to have correct capitlization... 
+
 function searchByName(people){
   var firstName = promptFor("What is the person's first name?", chars);
   var lastName = promptFor("What is the person's last name?", chars);
 
-  var foundPerson = people.filter(function(person){
+  var foundPeopleArray = people.filter(function(person){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
     }
@@ -71,8 +74,18 @@ function searchByName(people){
       return false;
     }
   })
+
+  if (foundPeopleArray.length === 1) {
+    return foundPeopleArray[0];
+  } else if(foundPeopleArray.length === 0){
+    return null;
+  }else{
+    console.log("Something went wrong!!! Too many people with the same name.");
+    return null;
+  }
+
+
   // TODO: find the person using the name they entered
-  return foundPerson;
 }
 
 // alerts a list of people
@@ -90,11 +103,21 @@ function displayPerson(person){
   personInfo += "Last Name: " + person.lastName + "\n";
   // TODO: finish getting the rest of the information to display
 
-  alert([0].map(function searchByName(el){
-"id" + "firstName" + "lastName" + "gender" + "dob" + "height" + "weight" +
-"eyeColor" + "occupation"}));
-return personInfo;
-console.log(personInfo);
+  alert(
+    "id: " + person.id + "\n" 
+    + "first name: " + person.firstName + "\n"
+    + "lastName: " + person.lastName + "\n" 
+    + "gender: " + person.gender + "\n"
+    + "dob: " + person.dob + "\n"
+    + "height: " + person.height + "\n"
+    + "weight: " + person.weight + "\n"
+    + "eyeColor: " + person.eyeColor +"\n"
+    + "occupation: " +person.occupation +"\n"
+    );
+
+  console.log(personInfo);
+
+  return personInfo;
 
 
 }
