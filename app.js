@@ -12,7 +12,7 @@ function app(people){
     mainMenu(foundPerson, people);
     break;
     case 'no':
-    	searchByTrait(people);
+    	searchByGender(people);
 
       break;
       default:
@@ -94,16 +94,29 @@ function displayPeople(people){
 }
 
 function searchByGender(people){
-    var searchByGender = prompt("Is the person male or female?") 
-    let  result  =  people.filter(function(el){
-    switch (searchByGender){
-      case "male" = displayPeople();
-      alert(people.map(function(person))
-      return person.firstName + " " + person.lastName;
-       }.join("\n");
+    var input = prompt("Is the person male or female?");
+    let searchByGender;
+    switch(input.toLowerCase()){
+      case "male":
+      searchByGender = "male";
+      break;
+      case "female":
+      searchByGender = "female";
+      // console.log(peopleOfGenderResultsArray);
+      break;
+      default:
+      alert("Please try again.");
+      return searchByGender(people);
+      break;
 
+      alert(peopleOfGenderResultsArray);
     }
-    
+    let peopleOfGenderResultsArray = people.filter(function(el){
+      el.gender === searchByGender
+      alert(peopleOfGenderResultsArray);
+    });
+    console.log(peopleOfGenderResultsArray);
+    return peopleOfGenderResultsArray;
 }
 
 
