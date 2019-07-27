@@ -11,8 +11,10 @@ function app(people){
     let foundPerson = searchByName(people);
     mainMenu(foundPerson, people);
     break;
-    case 'no':
-    	searchByGender(people);
+    case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
+    	// searchByGender(people);
+     //  searchByEyeColor(people);
+     searchByOccupation(people);
 
       break;
       default:
@@ -114,11 +116,204 @@ function searchByGender(people){
     let results = people.filter(function(el){
       return el.gender === searchGender
     });
+    function searchByGender(people){
+    var input = prompt("Is the person male or female?");
+    var searchGender;
+
+    switch(input.toLowerCase()){
+      case "male":
+        searchGender = "male";
+        break;
+      case "female":
+        searchGender = "female";
+        // console.log(peopleOfGenderResultsArray);
+        break;
+      default:
+        alert("Please try again.");
+        return searchByGender(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.gender === searchGender
+    });
      console.log(results);
 
      return results;
 
 }
+
+     console.log(results);
+
+     return results;
+
+}
+
+
+function searchByGender(people){
+    var input = prompt("Is the person male or female?");
+    var searchGender;
+
+    switch(input.toLowerCase()){
+      case "male":
+        searchGender = "male";
+        break;
+      case "female":
+        searchGender = "female";
+        // console.log(peopleOfGenderResultsArray);
+        break;
+      default:
+        alert("Please try again.");
+        return searchByGender(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.gender === searchGender
+    });
+     console.log(results);
+
+     return results;
+
+}
+
+
+function searchByEyeColor(people){
+    var input = prompt("What is the persons eye color?");
+    var searchEyeColor;
+
+    switch(input){
+      case "blue":
+        searchEyeColor = "blue";
+        break;
+      case "brown":
+        searchEyeColor = "brown";
+        // console.log(peopleOfGenderResultsArray);
+        break;
+      case "black":
+        searchEyeColor = "black";
+        break;
+      case "hazel":
+        searchEyeColor = "hazel";
+        break;
+      case "green":
+        searchEyeColor = "green"
+        break;
+      default:
+        alert("Please try again.");
+        return searchByEyeColor(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.eyeColor === searchEyeColor
+    });
+     console.log(results);
+
+     return results;
+
+}
+
+//.....if else statement for this function i couldnt figure out how to make it not break the app itself...
+// must do more research to make operational/universal for the other search criteria
+//but for now the app is a little more funcional...................Nate
+
+
+
+
+
+
+// function searchByEyeColor(){
+//   var input = prompt("Please enter eye color:")
+//   var searchEyeColor;
+//   if("blue") {
+//     searchEyeColor = "blue"
+//     let results = people.filter(function(el)
+//  }     
+
+   
+
+
+
+//     let results = people.filter(function(el){
+//       return el.eyeColor === searchEyeColor
+//     });
+//      console.log(results);
+
+//      return results;
+//   }
+// }
+
+
+function searchByOccupation(people){
+    var input = prompt("What is the persons occupation?");
+    var searchOccupation;
+
+    switch(input){
+      case "programmer":
+        searchOccupation = "programmer";
+        break;
+      case "assistant":
+        searchOccupation = "assistant";
+        break;
+      case "landscaper":
+        searchOccupation = "black";
+        break;
+      case "nurse":
+        searchOccupation = "nurse";
+        break;
+      case "student":
+        searchOccupation = "student";
+        break;
+      case "architect":  
+        searchOccupation = "architect";
+        break;
+      case "doctor":
+        searchOccupation = "doctor"
+        break;
+      case "politician":
+        searchOccupation = "politician"
+        break;  
+
+      default:
+        alert("Please try again.");
+        return searchByOccupation(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.occupation === searchOccupation
+    });
+     console.log(results);
+
+     return results;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
 
 function displayPerson(person){
