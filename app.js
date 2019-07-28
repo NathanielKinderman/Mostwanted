@@ -14,7 +14,8 @@ function app(people){
     case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
     	// searchByGender(people);
      //  searchByEyeColor(people);
-     searchByOccupation(people);
+     //searchByOccupation(people);
+     searchByHeight(people);
 
       break;
       default:
@@ -243,6 +244,21 @@ function searchByEyeColor(people){
 //      return results;
 //   }
 // }
+
+
+
+//the function for converting inches to feet 
+function searchByHeight(people) {
+  var valNum = prompt("please enter height:")
+  
+  document.getElementById("outputFeet").innerHTML=valNum*0.083333;
+  console.log(results);
+}
+
+
+
+
+
 
 
 function searchByOccupation(people){
