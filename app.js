@@ -121,6 +121,44 @@ function searchByGender(people){
 }
 
 
+function searchByEyeColor(people){
+    var input = prompt("What is the persons eye color?");
+    var searchEyeColor;
+
+    switch(input.toLowerCase()){
+      case "male":
+        searchEyeColor = "male";
+        break;
+      case "female":
+        searchEyeColor = "female";
+        // console.log(peopleOfGenderResultsArray);
+        break;
+      default:
+        alert("Please try again.");
+        return searchByEyeColor(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.eyeColor === searchEyeColor
+    });
+     console.log(results);
+
+     return results;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function displayPerson(person){
   var personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
