@@ -11,6 +11,7 @@ function app(people){
     let foundPerson = searchByName(people);
     mainMenu(foundPerson, people);
     break;
+<<<<<<< HEAD
     case 'no':
     //lengthConverter(people);   //polishing option
     //searchByEyeColor(people);
@@ -23,7 +24,17 @@ function app(people){
 
 
 
+=======
+>>>>>>> fbee39ca467e7ec0b87921d6004aeb1bb4ce28c7
 
+    case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
+    	// searchByGender(people);
+     // searchByEyeColor(people);
+     //searchByOccupation(people);
+     //searchByHeight(people);
+     searchByWeight(people);
+     //searchByDOB(people)
+     //searchByID(people);
 
 
 
@@ -105,7 +116,7 @@ function searchByName(people){
     else{
       return false;
     }
-  })
+  });
 
   if (foundPeopleArray.length === 1) {
     return foundPeopleArray[0];
@@ -345,20 +356,62 @@ function lengthConverter(people){
       return el.height <= feet
     });
   
+
   alert (peopleHeight);
 }
+
 
 
 // function searchByWeight(people){
 //   var input = prompt("Please enter subjects weight")
 //   var searchByWeight;
 
-//   if(i=0; person.weight <= 150; i++)                                                                  
-//     searchWeight = input;
-//     return = resluts;
+
+//   if(i=0; person.weight <= 150; i++) {
+//         searchWeight = input;
+//     return = results;
+//   }
 
 
-//     else if (i=0; person.weight <= 151)
+
+//     else if (i=0; person.weight <= 151 )
+
+
+// }
+
+function searchByWeight(people){
+  var bodyWeight = promptFor("What is the subjects body weight (in lbs)?:", chars);
+  
+  var foundPeopleArray = people.filter(function(person){
+    if(person.weight == bodyWeight){
+      return true;
+    }
+    else{
+      return false;
+    }
+  });
+  console.log(foundPeopleArray);
+  return foundPeopleArray;
+  //  if (foundPeopleArray.length <= 1) {
+  //   return foundPeopleArray[0];
+  // } else if(foundPeopleArray.length === 0){
+  //   return null;
+  // }else{
+  //   console.log("Something went wrong!!! Too many people with the same weight.");
+  //   return null;
+  // }
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 // }
