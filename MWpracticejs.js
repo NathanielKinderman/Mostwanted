@@ -47,3 +47,18 @@ function displayID(person){
   console.log(personInfo);
 
   return personInfo;
+
+
+  var run = function ageCalculator(){
+  	var birth = new date ();
+  	alert ("birth: {0}".format(birth.toLocaleDateString() ) );
+
+  	var now = new Date();
+  	alert("Now:{0}".format( now.toLocaleDateString() ) );
+
+	var age = now.getFullYear() - birth.getFullYear();
+	if (now.getMonth()>=birth.getMonth() && now.getDate() > birth.getDate() ) 
+		age --;
+
+	alert( "age{0}".format(age), 'blue');
+  }

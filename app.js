@@ -13,10 +13,12 @@ function app(people){
     break;
     case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
     	// searchByGender(people);
-     //  searchByEyeColor(people);
+     // searchByEyeColor(people);
      //searchByOccupation(people);
      //searchByHeight(people);
-     // searchByID(people);
+     searchByWeight(people);
+     //searchByDOB(people)
+     //searchByID(people);
 
 
       break;
@@ -74,7 +76,7 @@ function searchByName(people){
     else{
       return false;
     }
-  })
+  });
 
   if (foundPeopleArray.length === 1) {
     return foundPeopleArray[0];
@@ -341,6 +343,11 @@ function searchByOccupation(people){
 //   document.getElementById("outputFeet").innerHTML=valNum*0.083333;
 //   console.log(results);
 // }
+
+
+
+
+
 // function searchByWeight(people){
 //   var input = prompt("Please enter subjects weight")
 //   var searchByWeight;
@@ -349,16 +356,42 @@ function searchByOccupation(people){
 //   // between 151 to 200 lbs
 //   // greater then 201lbs    
 
-//   if(i=0; person.weight <= 150; i++   ) 
-//     searchWeight = input;
-//     return = resluts;
+//   if(i=0; person.weight <= 150; i++) {
+//         searchWeight = input;
+//     return = results;
+//   }
+
 
 
 //     else if (i=0; person.weight <= 151 )
 
 
-//}
+// }
 
+function searchByWeight(people){
+  var bodyWeight = promptFor("What is the subjects body weight (in lbs)?:", chars);
+  
+  var foundPeopleArray = people.filter(function(person){
+    if(person.weight == bodyWeight){
+      return true;
+    }
+    else{
+      return false;
+    }
+  });
+  console.log(foundPeopleArray);
+  return foundPeopleArray;
+  //  if (foundPeopleArray.length <= 1) {
+  //   return foundPeopleArray[0];
+  // } else if(foundPeopleArray.length === 0){
+  //   return null;
+  // }else{
+  //   console.log("Something went wrong!!! Too many people with the same weight.");
+  //   return null;
+  // }
+
+
+}
 
 
 
