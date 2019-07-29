@@ -11,14 +11,23 @@ function app(people){
     let foundPerson = searchByName(people);
     mainMenu(foundPerson, people);
     break;
-    case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
-    	// searchByGender(people);
-     //  searchByEyeColor(people);
-     //searchByOccupation(people);
-     //searchByHeight(people);
-     // searchByID(people);
+    case 'no':
+    // lengthConverter();
+    //searchByEyeColor();
+    //searchByGender();
+    //searchByID(people);
+    //searchByOccupation();
+    //searchByHeight(people);
+    break;
 
 
+
+
+
+
+
+    //!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
+    	
       break;
       default:
     app(people); // restart app
@@ -98,6 +107,31 @@ function displayPeople(people){
  	 }).join("\n"));
 }
 
+// function searchByGender(people){
+//     var input = prompt("Is the person male or female?");
+//     var searchGender;
+
+//     switch(input.toLowerCase()){
+//       case "male":
+//         searchGender = "male";
+//         break;
+//       case "female":
+//         searchGender = "female";
+//         // console.log(peopleOfGenderResultsArray);
+//         break;
+//       default:
+//         alert("Please try again.");
+//         return searchByGender(people);
+//         break;
+
+//     }
+//     let results = people.filter(function(el){
+//       return el.gender === searchGender
+//     });
+
+
+
+
 function searchByGender(people){
     var input = prompt("Is the person male or female?");
     var searchGender;
@@ -119,77 +153,7 @@ function searchByGender(people){
     let results = people.filter(function(el){
       return el.gender === searchGender
     });
-    function searchByGender(people){
-    var input = prompt("Is the person male or female?");
-    var searchGender;
-
-    switch(input.toLowerCase()){
-      case "male":
-        searchGender = "male";
-        break;
-      case "female":
-        searchGender = "female";
-        // console.log(peopleOfGenderResultsArray);
-        break;
-      default:
-        alert("Please try again.");
-        return searchByGender(people);
-        break;
-
-    }
-    let results = people.filter(function(el){
-      return el.gender === searchGender
-    });
-     console.log(results);
-
-     return results;
-
-}
-
-     console.log(results);
-
-     return results;
-
-}
-
-
-<<<<<<< HEAD
-function searchByEyeColor(people){
-    var input = prompt("What is the persons eye color?");
-    var searchEyeColor;
-
-    switch(input.toLowerCase()){
-      case "male":
-        searchEyeColor = "male";
-        break;
-      case "female":
-        searchEyeColor = "female";
-=======
-function searchByGender(people){
-    var input = prompt("Is the person male or female?");
-    var searchGender;
-
-    switch(input.toLowerCase()){
-      case "male":
-        searchGender = "male";
-        break;
-      case "female":
-        searchGender = "female";
->>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
-        // console.log(peopleOfGenderResultsArray);
-        break;
-      default:
-        alert("Please try again.");
-<<<<<<< HEAD
-=======
-        return searchByGender(people);
-        break;
-
-    }
-    let results = people.filter(function(el){
-      return el.gender === searchGender
-    });
-     console.log(results);
+     alert(results);
 
      return results;
 
@@ -219,7 +183,7 @@ function searchByEyeColor(people){
         break;
       default:
         alert("Please try again.");
->>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
+
         return searchByEyeColor(people);
         break;
 
@@ -233,8 +197,7 @@ function searchByEyeColor(people){
 
 }
 
-<<<<<<< HEAD
-=======
+
 //.....if else statement for this function i couldnt figure out how to make it not break the app itself...
 // must do more research to make operational/universal for the other search criteria
 //but for now the app is a little more funcional...................Nate
@@ -321,7 +284,7 @@ function searchByOccupation(people){
 // function searchByID(people){
 //   var person = personInfo;
 
-//   var personInfo = "Please enter subjects ID number: " + person.id + "\n"; 
+//   var personInfo = prompt ("Please enter subjects ID number: ") + person.id + "\n"; 
 
 //     alert(
 //     "id: " + person.id + "\n" 
@@ -353,72 +316,57 @@ function searchByOccupation(people){
 
 
 
-// function LengthConverter(people) {
-//   var valNum = prompt("please enter height:")
+function lengthConverter(people){
+  var valNum = prompt("please enter height in feet and inches:")
+  var feet = (height * .083333)
+  var peopleHeight = people.filter(function(el){
+      return el.height <= feet
+    });
   
-//   document.getElementById("outputFeet").innerHTML=valNum*0.083333;
-//   console.log(results);
-// }
+  alert (peopleHeight);
+}
+
+
 // function searchByWeight(people){
 //   var input = prompt("Please enter subjects weight")
 //   var searchByWeight;
-//   // figure out if else for weight,
-//   // between 100lbs to 150lbs
-//   // between 151 to 200 lbs
-//   // greater then 201lbs    
 
-//   if(i=0; person.weight <= 150; i++   ) 
+//   if(i=0; person.weight <= 150; i++)                                                                  
 //     searchWeight = input;
 //     return = resluts;
 
 
-//     else if (i=0; person.weight <= 151 )
+//     else if (i=0; person.weight <= 151)
 
 
-//}
-
-
-
-
-
-
->>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
+// }
 
 
 
 
 
 
+// function displayPerson(person){
+//   var personInfo = "First Name: " + person.firstName + "\n";
+//   personInfo += "Last Name: " + person.lastName + "\n";
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
+//     alert(
+//     "id: " + person.id + "\n" 
+//     + "first name: " + person.firstName + "\n"
+//     + "lastName: " + person.lastName + "\n" 
+//     + "gender: " + person.gender + "\n"
+//     + "dob: " + person.dob + "\n"
+//     + "height: " + person.height + "\n"
+//     + "weight: " + person.weight + "\n"
+//     + "eyeColor: " + person.eyeColor +"\n"
+//     + "occupation: " +person.occupation +"\n"
+//     );
 
+//   console.log(personInfo);
 
+//   return personInfo;
 
-
-function displayPerson(person){
-  var personInfo = "First Name: " + person.firstName + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
-
-    alert(
-    "id: " + person.id + "\n" 
-    + "first name: " + person.firstName + "\n"
-    + "lastName: " + person.lastName + "\n" 
-    + "gender: " + person.gender + "\n"
-    + "dob: " + person.dob + "\n"
-    + "height: " + person.height + "\n"
-    + "weight: " + person.weight + "\n"
-    + "eyeColor: " + person.eyeColor +"\n"
-    + "occupation: " +person.occupation +"\n"
-    );
-
-  console.log(personInfo);
-
-  return personInfo;
-
-}
+// }
 // function that prompts and validates user input
 function promptFor(question, valid){
   do{
@@ -436,3 +384,5 @@ function yesNo(input){
 function chars(input){
   return true; // default validation only
 }
+
+
