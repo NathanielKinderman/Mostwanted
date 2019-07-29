@@ -12,12 +12,13 @@ function app(people){
     mainMenu(foundPerson, people);
     break;
     case 'no':
-    // lengthConverter();
-    //searchByEyeColor();
-    //searchByGender();
-    //searchByID(people);
-    //searchByOccupation();
-    //searchByHeight(people);
+    //lengthConverter(people);   //polishing option
+    //searchByEyeColor(people);
+    //searchByWeight();
+    //searchByGender(people);
+    //searchByID(people);     //polishing option
+    //searchByOccupation(people);
+    //searchByHeight(people); //polishing option
     break;
 
 
@@ -54,10 +55,10 @@ function mainMenu(person, people){
     
     break;
     case "family":
-    // TODO: get person's family
+    findFamily(people, person);   // TODO: get person's family
     break;
     case "descendants":
-    // TODO: get person's descendants
+    findDescendants(people, person);           // TODO: get person's descendants
     break;
     case "restart":
     app(people); // restart
@@ -69,6 +70,27 @@ function mainMenu(person, people){
   }
 }
 
+function findDescendants(people, person){
+  var sameParents = people.filter(function(el){
+    if (person.id == el.parents){
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(sameParents[0]);
+}
+
+ function findFamily(people, person){
+    var sameFamily = people.filter(function(el){
+      if(person.id == el.currentSpouse){
+        return true;
+      } else {
+        return false;
+      }
+    });  
+    console.log(sameFamily[0]);      
+}  
 
 //.toLowercase()......find placement in prompt so user can type name without need to have correct capitlization... 
 
