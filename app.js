@@ -11,8 +11,13 @@ function app(people){
     let foundPerson = searchByName(people);
     mainMenu(foundPerson, people);
     break;
-    case 'no':
-    	searchByGender(people);
+    case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
+    	// searchByGender(people);
+     //  searchByEyeColor(people);
+     //searchByOccupation(people);
+     //searchByHeight(people);
+     // searchByID(people);
+
 
       break;
       default:
@@ -114,6 +119,76 @@ function searchByGender(people){
     let results = people.filter(function(el){
       return el.gender === searchGender
     });
+    function searchByGender(people){
+    var input = prompt("Is the person male or female?");
+    var searchGender;
+
+    switch(input.toLowerCase()){
+      case "male":
+        searchGender = "male";
+        break;
+      case "female":
+        searchGender = "female";
+        // console.log(peopleOfGenderResultsArray);
+        break;
+      default:
+        alert("Please try again.");
+        return searchByGender(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.gender === searchGender
+    });
+     console.log(results);
+
+     return results;
+
+}
+
+     console.log(results);
+
+     return results;
+
+}
+
+
+<<<<<<< HEAD
+function searchByEyeColor(people){
+    var input = prompt("What is the persons eye color?");
+    var searchEyeColor;
+
+    switch(input.toLowerCase()){
+      case "male":
+        searchEyeColor = "male";
+        break;
+      case "female":
+        searchEyeColor = "female";
+=======
+function searchByGender(people){
+    var input = prompt("Is the person male or female?");
+    var searchGender;
+
+    switch(input.toLowerCase()){
+      case "male":
+        searchGender = "male";
+        break;
+      case "female":
+        searchGender = "female";
+>>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
+        // console.log(peopleOfGenderResultsArray);
+        break;
+      default:
+        alert("Please try again.");
+<<<<<<< HEAD
+=======
+        return searchByGender(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.gender === searchGender
+    });
      console.log(results);
 
      return results;
@@ -125,16 +200,26 @@ function searchByEyeColor(people){
     var input = prompt("What is the persons eye color?");
     var searchEyeColor;
 
-    switch(input.toLowerCase()){
-      case "male":
-        searchEyeColor = "male";
+    switch(input){
+      case "blue":
+        searchEyeColor = "blue";
         break;
-      case "female":
-        searchEyeColor = "female";
+      case "brown":
+        searchEyeColor = "brown";
         // console.log(peopleOfGenderResultsArray);
+        break;
+      case "black":
+        searchEyeColor = "black";
+        break;
+      case "hazel":
+        searchEyeColor = "hazel";
+        break;
+      case "green":
+        searchEyeColor = "green"
         break;
       default:
         alert("Please try again.");
+>>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
         return searchByEyeColor(people);
         break;
 
@@ -148,6 +233,156 @@ function searchByEyeColor(people){
 
 }
 
+<<<<<<< HEAD
+=======
+//.....if else statement for this function i couldnt figure out how to make it not break the app itself...
+// must do more research to make operational/universal for the other search criteria
+//but for now the app is a little more funcional...................Nate
+
+
+
+
+
+
+// function searchByEyeColor(){
+//   var input = prompt("Please enter eye color:")
+//   var searchEyeColor;
+//   if("blue") {
+//     searchEyeColor = "blue"
+//     let results = people.filter(function(el)
+//  }     
+
+   
+
+
+
+//     let results = people.filter(function(el){
+//       return el.eyeColor === searchEyeColor
+//     });
+//      console.log(results);
+
+//      return results;
+//   }
+// }
+
+
+
+
+function searchByOccupation(people){
+    var input = prompt("What is the persons occupation?");
+    var searchOccupation;
+
+    switch(input){
+      case "programmer":
+        searchOccupation = "programmer";
+        break;
+      case "assistant":
+        searchOccupation = "assistant";
+        break;
+      case "landscaper":
+        searchOccupation = "black";
+        break;
+      case "nurse":
+        searchOccupation = "nurse";
+        break;
+      case "student":
+        searchOccupation = "student";
+        break;
+      case "architect":  
+        searchOccupation = "architect";
+        break;
+      case "doctor":
+        searchOccupation = "doctor"
+        break;
+      case "politician":
+        searchOccupation = "politician"
+        break;  
+
+      default:
+        alert("Please try again.");
+        return searchByOccupation(people);
+        break;
+
+    }
+    let results = people.filter(function(el){
+      return el.occupation === searchOccupation
+    });
+     console.log(results);
+
+     return results;
+
+}
+
+
+
+
+//i attempt to create searchById but ran into issue of person.id is not defined..........
+
+// function searchByID(people){
+//   var person = personInfo;
+
+//   var personInfo = "Please enter subjects ID number: " + person.id + "\n"; 
+
+//     alert(
+//     "id: " + person.id + "\n" 
+//     + "first name: " + person.firstName + "\n"
+//     + "lastName: " + person.lastName + "\n" 
+//     + "gender: " + person.gender + "\n"
+//     + "dob: " + person.dob + "\n"
+//     + "height: " + person.height + "\n"
+//     + "weight: " + person.weight + "\n"
+//     + "eyeColor: " + person.eyeColor +"\n"
+//     + "occupation: " +person.occupation +"\n"
+//     );
+
+//   console.log(personInfo);
+
+//   return personInfo;
+
+
+// }
+
+
+
+
+//more pseudo code what i think the function to go from inches to feet
+// also a fake function for weight......
+// what i think it should look like but as of this moment is not functional.........
+
+
+
+
+
+// function LengthConverter(people) {
+//   var valNum = prompt("please enter height:")
+  
+//   document.getElementById("outputFeet").innerHTML=valNum*0.083333;
+//   console.log(results);
+// }
+// function searchByWeight(people){
+//   var input = prompt("Please enter subjects weight")
+//   var searchByWeight;
+//   // figure out if else for weight,
+//   // between 100lbs to 150lbs
+//   // between 151 to 200 lbs
+//   // greater then 201lbs    
+
+//   if(i=0; person.weight <= 150; i++   ) 
+//     searchWeight = input;
+//     return = resluts;
+
+
+//     else if (i=0; person.weight <= 151 )
+
+
+//}
+
+
+
+
+
+
+>>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
 
 
 
@@ -155,6 +390,10 @@ function searchByEyeColor(people){
 
 
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 0d2e0b2d28d248555da927beb1e722b299b8cce1
 
 
 
