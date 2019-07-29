@@ -13,26 +13,44 @@ function app(people){
     break;
 
 
-    case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
-    	// searchByGender(people);
-     // searchByEyeColor(people);
-     //searchByOccupation(people);
-     //searchByHeight(people);
-     searchByWeight(people);
-     //searchByDOB(people)
-     //searchByID(people);
-
-
-
-    //!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
-    	
-      break;
-      default:
-    app(people); // restart app
+    case 'no': searchByTrait(people);
     break;
-  }
+        app(people); // restart app
+    break;
+     
 }
+}
+ function searchByTrait(people){
+      while(people.length > 1 ){
+      let result = [];
+       var input = prompt("Please enter: Gender, EyeColor, Occupation, or Weight.");
+       switch(input){
+       case "gender":
+          result = searchByGender(people);
+       break;
 
+       case "eyecolor":
+        result = searchByEyeColor(people);
+        break;
+
+       case "occupation":
+        result = searchByOccupation(people);
+       break;
+
+       case "weight":
+       result = searchByWeight(people);
+       break;
+    
+      
+       default: 
+       console.log("Invalid");
+       break;
+
+    }
+    people = result;
+  }
+  return people[0];
+}
 // Menu function to call once you find who you are looking for
 function mainMenu(person, people){
 
@@ -172,7 +190,7 @@ function searchByGender(people){
     let results = people.filter(function(el){
       return el.gender === searchGender
     });
-     alert(results);
+     console.log(results);
 
      return results;
 
@@ -398,6 +416,12 @@ function searchByWeight(people){
 
 
 
+//   if(i=0; person.weight <= 150; i++)                                                                  
+//     searchWeight = input;
+//     return = resluts;
+
+
+//     else if (i=0; person.weight <= 151)
 
 
 // }
