@@ -11,21 +11,7 @@ function app(people){
     let foundPerson = searchByName(people);
     mainMenu(foundPerson, people);
     break;
-<<<<<<< HEAD
-    case 'no':
-    //lengthConverter(people);   //polishing option
-    //searchByEyeColor(people);
-    //searchByWeight();
-    //searchByGender(people);
-    //searchByID(people);     //polishing option
-    //searchByOccupation(people);
-    //searchByHeight(people); //polishing option
-    break;
 
-
-
-=======
->>>>>>> fbee39ca467e7ec0b87921d6004aeb1bb4ce28c7
 
     case 'no'://!!!!!!!!NEED TO FIGURE OUT HOW TO COMBINE THESE SEARCH FUNCTIONS TO TOGETHER 
     	// searchByGender(people);
