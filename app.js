@@ -11,19 +11,17 @@ function app(people){
     let foundPerson = searchByName(people);
     mainMenu(foundPerson, people);
     break;
-
-
     case 'no': searchByTrait(people);
     break;
         app(people); // restart app
     break;
-     
+     }
 }
-}
+
  function searchByTrait(people){
       while(people.length > 1 ){
       let result = [];
-       var input = prompt("Please enter: Gender, EyeColor, Occupation, or Weight.");
+       var input = prompt("Please enter: Gender, EyeColor, Occupation, Weight or Height.");
        switch(input){
        case "gender":
           result = searchByGender(people);
@@ -31,6 +29,10 @@ function app(people){
 
        case "eyecolor":
         result = searchByEyeColor(people);
+        break;
+
+          case "height":
+        result = searchByHeight(people);
         break;
 
        case "occupation":
@@ -43,7 +45,7 @@ function app(people){
     
       
        default: 
-       console.log("Invalid");
+       alert("Invalid");
        break;
 
     }
@@ -87,7 +89,7 @@ function mainMenu(person, people){
 
 function findDescendants(people, person){
   var sameParents = people.filter(function(el){
-    if (person.id == el.parents){
+    if (person.id == el.parent){
       return true;
     } else {
       return false;
@@ -127,7 +129,7 @@ function searchByName(people){
   } else if(foundPeopleArray.length === 0){
     return null;
   }else{
-    console.log("Something went wrong!!! Too many people with the same name.");
+    alert("Something went wrong!!! Too many people with the same name.");
     return null;
   }
 
@@ -139,7 +141,7 @@ function searchByName(people){
 
 //alerts a list of people
 function displayPeople(people){
-	alert(people.map(function(person){
+	console.log(people.map(function(person){
 	return person.firstName + " " + person.lastName;
  	 }).join("\n"));
 }
@@ -190,7 +192,7 @@ function searchByGender(people){
     let results = people.filter(function(el){
       return el.gender === searchGender
     });
-     console.log(results);
+     console.log(results[0]);
 
      return results;
 
@@ -207,7 +209,6 @@ function searchByEyeColor(people){
         break;
       case "brown":
         searchEyeColor = "brown";
-        // console.log(peopleOfGenderResultsArray);
         break;
       case "black":
         searchEyeColor = "black";
@@ -228,43 +229,11 @@ function searchByEyeColor(people){
     let results = people.filter(function(el){
       return el.eyeColor === searchEyeColor
     });
-     console.log(results);
+     alert(this.results[0]);
 
      return results;
 
 }
-
-
-//.....if else statement for this function i couldnt figure out how to make it not break the app itself...
-// must do more research to make operational/universal for the other search criteria
-//but for now the app is a little more funcional...................Nate
-
-
-
-
-
-
-// function searchByEyeColor(){
-//   var input = prompt("Please enter eye color:")
-//   var searchEyeColor;
-//   if("blue") {
-//     searchEyeColor = "blue"
-//     let results = people.filter(function(el)
-//  }     
-
-   
-
-
-
-//     let results = people.filter(function(el){
-//       return el.eyeColor === searchEyeColor
-//     });
-//      console.log(results);
-
-//      return results;
-//   }
-// }
-
 
 
 
@@ -351,18 +320,18 @@ function searchByOccupation(people){
 
 
 
+//function to convert inches to feet
 
-
-function lengthConverter(people){
-  var valNum = prompt("please enter height in feet and inches:")
-  var feet = (height * .083333)
-  var peopleHeight = people.filter(function(el){
-      return el.height <= feet
-    });
+// function lengthConverter(people){
+//   var valNum = prompt("please enter height in feet and inches:")
+//   var feet = (height * .083333)
+//   var peopleHeight = people.filter(function(el){
+//       return el.height <= feet
+//     });
   
 
-  alert (peopleHeight);
-}
+//   console.log(peopleHeight[0]);
+// }
 
 
 
@@ -383,6 +352,24 @@ function lengthConverter(people){
 
 // }
 
+function searchByHeight(people)
+{
+  let height = prompt("What is the subjects height in inches?")
+      let peopleTallEnough = people.filter(function(el)
+      {
+        if(el.peopleTallEnough == height)
+          {
+          return true;
+          }
+        else
+          {
+            return false;
+          }
+      })
+    return peopleTallEnough;
+}
+
+
 function searchByWeight(people){
   var bodyWeight = promptFor("What is the subjects body weight (in lbs)?:", chars);
   
@@ -394,7 +381,7 @@ function searchByWeight(people){
       return false;
     }
   });
-  console.log(foundPeopleArray);
+  console.log(foundPeopleArray[0]);
   return foundPeopleArray;
   //  if (foundPeopleArray.length <= 1) {
   //   return foundPeopleArray[0];
@@ -453,6 +440,9 @@ function searchByWeight(people){
 
 // }
 // function that prompts and validates user input
+
+
+
 function promptFor(question, valid){
   do{
     var response = prompt(question).trim();
