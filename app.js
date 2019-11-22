@@ -286,30 +286,26 @@ function searchByOccupation(people){
 
 
 //i attempt to create searchById but ran into issue of person.id is not defined..........
-
-// function searchByID(people){
-//   var person = personInfo;
-
-//   var personInfo = prompt ("Please enter subjects ID number: ") + person.id + "\n"; 
-
-//     alert(
-//     "id: " + person.id + "\n" 
-//     + "first name: " + person.firstName + "\n"
-//     + "lastName: " + person.lastName + "\n" 
-//     + "gender: " + person.gender + "\n"
-//     + "dob: " + person.dob + "\n"
-//     + "height: " + person.height + "\n"
-//     + "weight: " + person.weight + "\n"
-//     + "eyeColor: " + person.eyeColor +"\n"
-//     + "occupation: " +person.occupation +"\n"
-//     );
-
-//   console.log(personInfo);
-
-//   return personInfo;
+// Josi remade this function to instead list all the information of one person
+function displayPerson(person){
 
 
-// }
+
+
+    let personInfo = "id: " + person.id + "\n" 
+    personInfo += "first name: " + person.firstName + "\n"
+    personInfo += "lastName: " + person.lastName + "\n" 
+    personInfo += "gender: " + person.gender + "\n"
+    personInfo += "dob: " + person.dob + "\n"
+    personInfo += "height: " + person.height + "\n"
+    personInfo += "weight: " + person.weight + "\n"
+    personInfo += "eyeColor: " + person.eyeColor +"\n"
+    personInfo += "occupation: " +person.occupation +"\n"
+    
+
+  console.log(personInfo);
+
+}
 
 
 
