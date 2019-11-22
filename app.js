@@ -63,7 +63,7 @@ function mainMenu(person, people){
     return app(people); // restart
   }
 
-  var displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
+  var displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family',  'descendants' or 'immediate family'? Type the option you want or 'restart' or 'quit'");
 
   switch(displayOption){
     case "info":
@@ -77,6 +77,9 @@ function mainMenu(person, people){
     case "descendants":
     findDescendants(people, person);           // TODO: get person's descendants
     break;
+    case "immediate family":
+    immediateFamily(people); // restart
+    break;
     case "restart":
     app(people); // restart
     break;
@@ -87,17 +90,22 @@ function mainMenu(person, people){
   }
 }
 
-function findDescendants(people, person){
-  var sameParents = people.filter(function(el){
-    if (person.id == el.parent){
-      return true;
-    } else {
-      return false;
-    }
-  });
-  console.log(sameParents[0]);
-}
 
+//this functions will need other functions to be called aswell, 
+//they will all run until the results are met?
+//the id is being comapred with an array so nothing si being found
+
+// function findDescendants(people, person){
+// 	let descendants = [];
+// 	let unrelated = [];
+// 	let seperatedArrays = parentIdArrays(array);
+
+
+
+
+
+
+//In order to find a persons family, i need to find their parents, children and grand children if any
  function findFamily(people, person){
     var sameFamily = people.filter(function(el){
       if(person.id == el.currentSpouse){
@@ -106,8 +114,29 @@ function findDescendants(people, person){
         return false;
       }
     });  
+    alert(sameFamily);
     console.log(sameFamily[0]);      
 }  
+
+
+
+
+
+function allPeople(array, item){
+  let peopleArray = [];
+  for(let i = 0; i < array.length && i < item.length; i++){
+          peopleArray.push(array[item[i]]);
+      }
+  return peopleArray;
+}
+
+
+
+
+
+
+
+
 
 //.toLowercase()......find placement in prompt so user can type name without need to have correct capitlization... 
 
@@ -136,9 +165,6 @@ function searchByName(people){
 
 }
 
-
-
-
 //alerts a list of people
 function displayPeople(people){
 	console.log(people.map(function(person){
@@ -146,32 +172,8 @@ function displayPeople(people){
  	 }).join("\n"));
 }
 
-// function searchByGender(people){
-//     var input = prompt("Is the person male or female?");
-//     var searchGender;
-
-//     switch(input.toLowerCase()){
-//       case "male":
-//         searchGender = "male";
-//         break;
-//       case "female":
-//         searchGender = "female";
-//         // console.log(peopleOfGenderResultsArray);
-//         break;
-//       default:
-//         alert("Please try again.");
-//         return searchByGender(people);
-//         break;
-
-//     }
-//     let results = people.filter(function(el){
-//       return el.gender === searchGender
-//     });
-
-
-
-
 function searchByGender(people){
+	let sameGenderPeople = [];
     var input = prompt("Is the person male or female?");
     var searchGender;
 
@@ -189,9 +191,11 @@ function searchByGender(people){
         break;
 
     }
-    let results = people.filter(function(el){
+
+    people.filter(function(el){
       return el.gender === searchGender
     });
+     alert(results[0]);
      console.log(results[0]);
 
      return results;
@@ -229,7 +233,7 @@ function searchByEyeColor(people){
     let results = people.filter(function(el){
       return el.eyeColor === searchEyeColor
     });
-     alert(this.results[0]);
+     console.log(this.results);
 
      return results;
 
@@ -289,9 +293,6 @@ function searchByOccupation(people){
 // Josi remade this function to instead list all the information of one person
 function displayPerson(person){
 
-
-
-
     let personInfo = "id: " + person.id + "\n" 
     personInfo += "first name: " + person.firstName + "\n"
     personInfo += "lastName: " + person.lastName + "\n" 
@@ -302,22 +303,14 @@ function displayPerson(person){
     personInfo += "eyeColor: " + person.eyeColor +"\n"
     personInfo += "occupation: " +person.occupation +"\n"
     
-
   console.log(personInfo);
-
 }
 
 
 
 
 //more pseudo code what i think the function to go from inches to feet
-// also a fake function for weight......
-// what i think it should look like but as of this moment is not functional.........
-
-
-
 //function to convert inches to feet
-
 // function lengthConverter(people){
 //   var valNum = prompt("please enter height in feet and inches:")
 //   var feet = (height * .083333)
@@ -329,24 +322,6 @@ function displayPerson(person){
 //   console.log(peopleHeight[0]);
 // }
 
-
-
-// function searchByWeight(people){
-//   var input = prompt("Please enter subjects weight")
-//   var searchByWeight;
-
-
-//   if(i=0; person.weight <= 150; i++) {
-//         searchWeight = input;
-//     return = results;
-//   }
-
-
-
-//     else if (i=0; person.weight <= 151 )
-
-
-// }
 
 function searchByHeight(people)
 {
@@ -383,61 +358,14 @@ function searchByWeight(people){
   //   return foundPeopleArray[0];
   // } else if(foundPeopleArray.length === 0){
   //   return null;
-  // }else{
+  // }
+  // else{
   //   console.log("Something went wrong!!! Too many people with the same weight.");
   //   return null;
   // }
 
 
 }
-
-
-
-
-
-
-
-
-
-//   if(i=0; person.weight <= 150; i++)                                                                  
-//     searchWeight = input;
-//     return = resluts;
-
-
-//     else if (i=0; person.weight <= 151)
-
-
-// }
-
-
-
-
-
-
-// function displayPerson(person){
-//   var personInfo = "First Name: " + person.firstName + "\n";
-//   personInfo += "Last Name: " + person.lastName + "\n";
-
-//     alert(
-//     "id: " + person.id + "\n" 
-//     + "first name: " + person.firstName + "\n"
-//     + "lastName: " + person.lastName + "\n" 
-//     + "gender: " + person.gender + "\n"
-//     + "dob: " + person.dob + "\n"
-//     + "height: " + person.height + "\n"
-//     + "weight: " + person.weight + "\n"
-//     + "eyeColor: " + person.eyeColor +"\n"
-//     + "occupation: " +person.occupation +"\n"
-//     );
-
-//   console.log(personInfo);
-
-//   return personInfo;
-
-// }
-// function that prompts and validates user input
-
-
 
 function promptFor(question, valid){
   do{
