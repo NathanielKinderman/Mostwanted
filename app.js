@@ -118,14 +118,26 @@ function mainMenu(person, people){
     console.log(sameFamily[0]);      
 }  
 
+ function immediateFamily(person, peopleArray){
+	let familyArray = [];
+	for (let i = 0; i < familyArray.length; i ++){
+		if(peopleArray[i].id == person.parents[0]){
+			let familyMember = "Parent: " + peopleArray[i].firstName + " " + peopleArray[i].lastName;
+			familyArray.push(familyMember);
+		}
+		
+	}
+	alert(familyArray);
+
+}
 
 
 
 
-function allPeople(array, item){
+function allPeople(people, item){
   let peopleArray = [];
-  for(let i = 0; i < array.length && i < item.length; i++){
-          peopleArray.push(array[item[i]]);
+  for(let i = 0; i < people.length && i < item.length; i++){
+          peopleArray.push(people[item[i]]);
       }
   return peopleArray;
 }
